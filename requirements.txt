@@ -5,4 +5,5 @@ scipy
 xgboost
 matplotlib
 statsmodels
+sklearn
 
