@@ -9,7 +9,7 @@ import numpy as np
 # import midi
 #from scipy.io import wavfile
 import scipy
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from feature2pred import get_pred
 from getfeature_py import getfeature
 from predict import get_score
