@@ -32,7 +32,7 @@ if uploaded_file is None:
 
 # dalay module
 with st.spinner('Wait for it...'):
-    samplerate, data = wavfile.read(uploaded_file)
+    samplerate, data = scipy.io.wavfile.read(uploaded_file)
     # st.write(uploaded_file)
     wav_name = 'audios/temp_audio.wav'
     scipy.io.wavfile.write(wav_name, samplerate, data)
