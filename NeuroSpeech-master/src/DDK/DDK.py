@@ -2,10 +2,10 @@
 
 from scipy.io.wavfile import read
 import os
-import sys
+#import sys
 import numpy as np
-import matplotlib.pyplot as plt
-from radarDDK import plot_radar
+#import matplotlib.pyplot as plt
+#from radarDDK import plot_radar
 
 
 
