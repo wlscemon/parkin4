@@ -7,7 +7,7 @@ import pandas as pd
 # import io
 import numpy as np
 # import midi
-from scipy.io import wavfile
+#from scipy.io import wavfile
 import scipy
 import matplotlib.pyplot as plt
 from feature2pred import get_pred
