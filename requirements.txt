@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+scipy.io
+scipy
+matplotlib.pyplot
+time
+xgboost
