@@ -3,13 +3,13 @@
 
 from scipy.io.wavfile import read
 import os
-import sys
+#import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 from statsmodels.tsa.tsatools import lagmat
 from sklearn.metrics.pairwise import euclidean_distances as dist
-from radarPlot import plot_radar
+#from radarPlot import plot_radar
 
 
 def phonationVowels(audio, path_base):
