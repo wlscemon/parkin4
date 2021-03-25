@@ -1,8 +1,8 @@
 streamlit
 pandas
 numpy
-scipy.io
 scipy
+scipy.io
 matplotlib.pyplot
 time
 xgboost
