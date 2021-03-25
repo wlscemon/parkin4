@@ -1,4 +1,4 @@
-from pyrpde import rpde
+#from pyrpde import rpde
 # pip install pyrpde
 from scipy.io import wavfile
 import sys
