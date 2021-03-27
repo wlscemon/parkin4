@@ -160,6 +160,6 @@ st.dataframe(df4)  # Same as st.write(df)
 
 # bonus
 
-st.write('您的检测结果非常健康！')
-time.sleep(8)
-st.balloons()
+#st.write('您的检测结果非常健康！')
+#time.sleep(8)
+#st.balloons()
