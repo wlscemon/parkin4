@@ -76,6 +76,20 @@ with st.spinner('Wait for it...'):
 # for percent_complete in range(100):
 #     my_bar.progress(percent_complete + 1)
 
+st.header(':musical_note: 您的预测结果为： ')
+pred = int(pred*100)
+st.title(pred)
+
+if pred > 50:
+    warn_text = '您有很大的可能患有帕金森综合征，建议及时至医院复查就诊。'
+    st.subheader(warn_text)
+    st.write('（分数越高，患病几率越大；分数越低，患病几率越小。）')
+else:
+    warn_text = '您的检测结果非常健康！'
+    st.subheader(warn_text)
+    st.write('（分数越高，患病几率越大；分数越低，患病几率越小。）')
+    time.sleep(5)
+    st.balloons()
 
 st.header(':musical_note: 您的声音图像为： ')
 chart_data = pd.DataFrame(
@@ -91,17 +105,40 @@ st.line_chart(chart_data)
 # st.pyplot(fig)
 
 
-st.header(':musical_note: 您的feature为： ')
-
-df = pd.DataFrame(
-    np.random.randn(50, 6),
+st.header(':musical_note: 您的声音信号指标为： ')
+feature_list = ['mF0', 'sF0', 'mmF0', 'mlogE', 'slogE', 'mmlogE', 'Vrate', 'avgdurv', 'stddurv', 'Silrate',
+                'avgdurs', 'stddurs', 'F0varsemi', 'mjitter', 'mshimmer', 'apq', 'ppq',
+                'mlogE', 'degreeU', 'varF0', 'avgdurs', 'stddurs']
+df1 = pd.DataFrame(
+    # np.random.randn(1, 6),
+    feature_p[:6].reshape(1, -1),
     # columns=('col %d' % i for i in range(20)))
-    columns=['fea1', 'fea2', 'fea3', 'fea4', 'fea5', 'fea6'])
+    columns=feature_list[:6])
 
-st.dataframe(df)  # Same as st.write(df)
+df2 = pd.DataFrame(
+    # np.random.randn(6, 13),
+    feature_p[6:12].reshape(1, -1),
+    # columns=('col %d' % i for i in range(20)))
+    columns=feature_list[6:12])
+df3 = pd.DataFrame(
+    # np.random.randn(1, 6),
+    feature_p[13:19].reshape(1, -1),
+    # columns=('col %d' % i for i in range(20)))
+    columns=feature_list[13:19])
+df4 = pd.DataFrame(
+    # np.random.randn(1, 6),
+    feature_p[19:].reshape(1, -1),
+    # columns=('col %d' % i for i in range(20)))
+    columns=feature_list[19:])
+st.dataframe(df1)  # Same as st.write(df)
+st.dataframe(df2)  # Same as st.write(df)
+st.dataframe(df3)  # Same as st.write(df)
+st.dataframe(df4)  # Same as st.write(df)
 
-st.header(':musical_note: 您的预测结果为： ')
-st.title(pred)
+
+
+
+
 
 # ui = wavfile.read(uploaded_file, mmap=False)
 # st.write(type(ui))
